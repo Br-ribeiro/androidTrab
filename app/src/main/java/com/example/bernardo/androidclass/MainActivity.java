@@ -25,7 +25,6 @@ public class MainActivity extends AppCompatActivity {
 
     protected void initToolbar(){
         Toolbar toolbar = (Toolbar)findViewById(R.id.toolbar_principal);
-        toolbar.setTitle("Restaurantes");
         toolbar.setLogo(R.mipmap.logo);
 
         setSupportActionBar(toolbar);
@@ -46,10 +45,10 @@ public class MainActivity extends AppCompatActivity {
             startActivity(new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS));
             break;
 
-            case R.id.Telef:
+            /*case R.id.Telef:
                 Toast.makeText(this, "Telefone", Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(Intent.ACTION_DIAL));
-                break;
+                break;*/
 
             case R.id.Logout:
                 SharedPreferences prefs = getSharedPreferences("com.example.bernardo.androidclass", Context.MODE_PRIVATE);
