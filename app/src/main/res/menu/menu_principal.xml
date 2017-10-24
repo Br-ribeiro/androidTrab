@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/Telef"
+        android:icon="@drawable/ic_phone_black_24px"
+        android:title="Item"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/Config"
+        android:icon="@drawable/ic_settings_black_24px"
+        android:title="Item"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/Logout"
+        android:icon="@drawable/ic_power_settings_new_black_24px"
+        android:title="Item"
+        app:showAsAction="always" />
+</menu>
