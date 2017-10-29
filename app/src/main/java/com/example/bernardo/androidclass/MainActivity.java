@@ -10,9 +10,18 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+import com.example.bernardo.androidclass.adapters.AdapterSpinner;
+
+public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+
+    int icones[] = {R.mipmap.img1, R.mipmap.img2, R.mipmap.img3, R.mipmap.img4};
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,11 +29,33 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         initToolbar();
+        //initSpinner();
+
+        initSpinnerCustom();
     }
 
 
+
+    private void initSpinner(){
+
+        Spinner spinner = (Spinner) findViewById(R.id.spinner);
+        spinner.setOnItemSelectedListener(this);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.aCategorias, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(adapter);
+    }
+
+    private void  initSpinnerCustom(){
+        Spinner spinner = (Spinner) findViewById(R.id.spinner);
+        spinner.setOnItemSelectedListener(this);
+
+        AdapterSpinner adapterSpinner = new AdapterSpinner(this,icones, getResources().getStringArray(R.array.aCategorias));
+        spinner.setAdapter(adapterSpinner);
+    }
+
     protected void initToolbar(){
         Toolbar toolbar = (Toolbar)findViewById(R.id.toolbar_principal);
+        toolbar.setTitle(" ");
         toolbar.setLogo(R.mipmap.logo);
 
         setSupportActionBar(toolbar);
@@ -59,5 +90,17 @@ public class MainActivity extends AppCompatActivity {
                 break;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+        String[] categoria = getResources().getStringArray(R.array.aCategorias);
+        Toast.makeText(this, categoria[position], Toast.LENGTH_SHORT).show();
+
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
+
     }
 }

@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">AndroidClass</string>
+
+    <string-array name="aCategorias">
+    <item>Japonesa</item>
+    <item>Massas</item>
+    <item>Fast-food</item>
+    <item>Brasileira</item>
+    </string-array>
+
 </resources>
