@@ -17,11 +17,17 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.example.bernardo.androidclass.adapters.AdapterSpinner;
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
 
-public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener, OnMapReadyCallback {
 
     int icones[] = {R.mipmap.img1, R.mipmap.img2, R.mipmap.img3, R.mipmap.img4};
-
+    private GoogleMap mMap;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,9 +38,23 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         //initSpinner();
 
         initSpinnerCustom();
+
+        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
+                .findFragmentById(R.id.map);
+        mapFragment.getMapAsync(this);
     }
 
 
+
+
+    public void onMapReady(GoogleMap googleMap) {
+        mMap = googleMap;
+
+        // Add a marker in Sydney and move the camera
+        LatLng sydney = new LatLng(-34, 151);
+        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+    }
 
     private void initSpinner(){
 
@@ -72,8 +92,13 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         switch (item.getItemId()){
 
             case R.id.Config:
-            Toast.makeText(this, "Configuração", Toast.LENGTH_SHORT).show();
-            startActivity(new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS));
+            /*Toast.makeText(this, "Configuração", Toast.LENGTH_SHORT).show();
+            startActivity(new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS));*/
+
+                Intent intent;
+
+                    intent = new Intent(this, MapsActivity.class);
+                startActivity(intent);
             break;
 
             /*case R.id.Telef:
