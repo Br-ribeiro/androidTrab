@@ -92,13 +92,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         switch (item.getItemId()){
 
             case R.id.Config:
-            /*Toast.makeText(this, "Configuração", Toast.LENGTH_SHORT).show();
-            startActivity(new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS));*/
-
-                Intent intent;
-
-                    intent = new Intent(this, MapsActivity.class);
-                startActivity(intent);
+            Toast.makeText(this, "Configuração", Toast.LENGTH_SHORT).show();
+            startActivity(new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS));
             break;
 
             /*case R.id.Telef:
