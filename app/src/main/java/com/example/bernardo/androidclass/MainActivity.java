@@ -123,7 +123,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             Toast.makeText(this, categoria[position], Toast.LENGTH_SHORT).show();
         }else{
             Toast.makeText(this, categoria[position], Toast.LENGTH_SHORT).show();
-            startActivity(new Intent(MainActivity.this, EstiloEscolhido.class));
+            Intent intent = new Intent(this, EstiloEscolhido.class);
+            intent.putExtra(EstiloEscolhido.KEYGUARD_SERVICE, categoria[position]);
+            startActivity(intent);
         }
 
     }
