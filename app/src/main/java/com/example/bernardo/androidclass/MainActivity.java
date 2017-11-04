@@ -26,7 +26,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
 
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener, OnMapReadyCallback {
 
-    int icones[] = {R.mipmap.img1, R.mipmap.img2, R.mipmap.img3, R.mipmap.img4};
+    int icones[] = {R.mipmap.img0, R.mipmap.img1, R.mipmap.img2, R.mipmap.img3, R.mipmap.img4};
     private GoogleMap mMap;
 
     @Override
@@ -42,6 +42,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+
+
+
     }
 
 
@@ -51,7 +54,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         mMap = googleMap;
 
         // Add a marker in Sydney and move the camera
-        LatLng sydney = new LatLng(-34, 151);
+        LatLng sydney = new LatLng(-21.833195, -41.275097);
         mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
     }
@@ -115,7 +118,13 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         String[] categoria = getResources().getStringArray(R.array.aCategorias);
-        Toast.makeText(this, categoria[position], Toast.LENGTH_SHORT).show();
+
+        if(categoria[position].equals("Escolha!!")){
+            Toast.makeText(this, categoria[position], Toast.LENGTH_SHORT).show();
+        }else{
+            Toast.makeText(this, categoria[position], Toast.LENGTH_SHORT).show();
+            startActivity(new Intent(MainActivity.this, EstiloEscolhido.class));
+        }
 
     }
 

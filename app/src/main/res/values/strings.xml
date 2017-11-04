@@ -2,6 +2,7 @@
     <string name="app_name">AndroidClass</string>
 
     <string-array name="aCategorias">
+        <item>Escolha!!</item>
         <item>Japonesa</item>
         <item>Massas</item>
         <item>Fast-food</item>
