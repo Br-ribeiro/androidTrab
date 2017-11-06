@@ -41,6 +41,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
+
         mapFragment.getMapAsync(this);
 
 
@@ -54,9 +55,10 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         mMap = googleMap;
 
         // Add a marker in Sydney and move the camera
-        LatLng sydney = new LatLng(-21.833195, -41.275097);
-        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+        LatLng minhaPosicao = new LatLng(-21.833195, -41.275097);
+        mMap.addMarker(new MarkerOptions().position(minhaPosicao).title("Marker in Sydney"));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(minhaPosicao));
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(minhaPosicao,15));
     }
 
     private void initSpinner(){
