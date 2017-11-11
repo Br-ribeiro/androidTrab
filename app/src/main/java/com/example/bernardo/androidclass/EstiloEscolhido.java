@@ -2,8 +2,13 @@ package com.example.bernardo.androidclass;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Toast;
+
+import com.example.bernardo.androidclass.adapters.AdapterJaponesa;
 
 public class EstiloEscolhido extends AppCompatActivity {
 
@@ -34,12 +39,23 @@ public class EstiloEscolhido extends AppCompatActivity {
 
     }
 
+    private void initRecucleViewJaponesa(){
+        RecyclerView recyclerView = (RecyclerView)findViewById(R.id.rvJapa);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setAdapter(new AdapterJaponesa());
+
+    }
+
+
+
     public String Selecionar(String item){
         view = findViewById(R.id.escolhaTela);
         switch (item){
 
             case "Japonesa":
                 view.setBackgroundColor(getResources().getColor(android.R.color.black));
+                initRecucleViewJaponesa();
                 Toast.makeText(this, caso, Toast.LENGTH_SHORT).show();
                 break;
             case "Massas":
