@@ -14,24 +14,25 @@ import com.example.bernardo.androidclass.R;
  * Created by Bernardo on 11/11/2017.
  */
 
-public class AdapterJaponesa extends RecyclerView.Adapter<AdapterJaponesa.ViewHolder>{
+public class AdapterMassas extends RecyclerView.Adapter<AdapterMassas.ViewHolder> {
 
-    int img[] = {R.drawable.imgjapa, R.drawable.imgjapa, R.drawable.imgjapa, R.drawable.imgjapa, R.drawable.imgjapa, R.drawable.imgjapa, R.drawable.imgjapa, R.drawable.imgjapa, R.drawable.imgjapa, R.drawable.imgjapa};
+    int img[] = {R.drawable.imgmassas, R.drawable.imgmassas, R.drawable.imgmassas, R.drawable.imgmassas, R.drawable.imgmassas, R.drawable.imgmassas, R.drawable.imgmassas, R.drawable.imgmassas, R.drawable.imgmassas, R.drawable.imgmassas};
 
 
 
     @Override
-    public AdapterJaponesa.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.japa_rv, parent, false);
-        return new ViewHolder(view);
+    public AdapterMassas.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.massas_rv, parent, false);
+        return new AdapterMassas.ViewHolder(view);
     }
-    public AdapterJaponesa(){
+    public AdapterMassas(){
         super();
 
+
     }
 
     @Override
-    public void onBindViewHolder(AdapterJaponesa.ViewHolder holder, int position) {
+    public void onBindViewHolder(AdapterMassas.ViewHolder holder, int position) {
         holder.ivImage.setImageResource((img[position]));
     }
 
@@ -56,6 +57,5 @@ public class AdapterJaponesa extends RecyclerView.Adapter<AdapterJaponesa.ViewHo
             Toast.makeText(view.getContext(), "Você clicou no " + getAdapterPosition(), Toast.LENGTH_SHORT).show();
         }
     }
-
 
 }

@@ -153,7 +153,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     @Override
     public void onConnected(@Nullable Bundle bundle) {
-        try {
+       /* try {
 
             mLastLocation = LocationServices.FusedLocationApi.getLastLocation(mGoogleApiClient);
                 longitude = mLastLocation.getLongitude();
@@ -162,7 +162,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             onMapReady(mMap);
         } catch (SecurityException e) {
 
-        }
+        }*/
     }
 
     protected void onStart() {

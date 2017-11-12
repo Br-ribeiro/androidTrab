@@ -14,24 +14,25 @@ import com.example.bernardo.androidclass.R;
  * Created by Bernardo on 11/11/2017.
  */
 
-public class AdapterJaponesa extends RecyclerView.Adapter<AdapterJaponesa.ViewHolder>{
+public class AdapterFastFood extends RecyclerView.Adapter<AdapterFastFood.ViewHolder>{
 
-    int img[] = {R.drawable.imgjapa, R.drawable.imgjapa, R.drawable.imgjapa, R.drawable.imgjapa, R.drawable.imgjapa, R.drawable.imgjapa, R.drawable.imgjapa, R.drawable.imgjapa, R.drawable.imgjapa, R.drawable.imgjapa};
+    int img[] = {R.drawable.imgfastfood, R.drawable.imgfastfood, R.drawable.imgfastfood, R.drawable.imgfastfood, R.drawable.imgfastfood, R.drawable.imgfastfood, R.drawable.imgfastfood, R.drawable.imgfastfood, R.drawable.imgfastfood, R.drawable.imgfastfood};
 
 
 
     @Override
-    public AdapterJaponesa.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.japa_rv, parent, false);
-        return new ViewHolder(view);
+    public AdapterFastFood.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.fastfood_rv, parent, false);
+        return new AdapterFastFood.ViewHolder(view);
     }
-    public AdapterJaponesa(){
+    public AdapterFastFood(){
         super();
 
+
     }
 
     @Override
-    public void onBindViewHolder(AdapterJaponesa.ViewHolder holder, int position) {
+    public void onBindViewHolder(AdapterFastFood.ViewHolder holder, int position) {
         holder.ivImage.setImageResource((img[position]));
     }
 

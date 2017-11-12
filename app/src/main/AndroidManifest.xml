@@ -39,7 +39,8 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
 
-        <activity android:name=".EstiloEscolhido"></activity>
+        <activity android:name=".EstiloEscolhido" />
+        <activity android:name=".Cardapio"></activity>
     </application>
 
 </manifest>
