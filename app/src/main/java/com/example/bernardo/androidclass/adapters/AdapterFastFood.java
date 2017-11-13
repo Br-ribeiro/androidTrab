@@ -1,5 +1,6 @@
 package com.example.bernardo.androidclass.adapters;
 
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.bernardo.androidclass.Cardapio;
 import com.example.bernardo.androidclass.R;
 
 /**
@@ -55,6 +57,7 @@ public class AdapterFastFood extends RecyclerView.Adapter<AdapterFastFood.ViewHo
         @Override
         public void onClick(View view) {
             Toast.makeText(view.getContext(), "Você clicou no " + getAdapterPosition(), Toast.LENGTH_SHORT).show();
+            view.getContext().startActivity(new Intent(view.getContext(), Cardapio.class));
         }
     }
 

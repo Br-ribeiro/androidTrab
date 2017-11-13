@@ -67,7 +67,7 @@ public class AdapterBR extends RecyclerView.Adapter<AdapterBR.ViewHolder>{
         @Override
         public void onClick(View view) {
             Toast.makeText(view.getContext(), "Você clicou no " + getAdapterPosition(), Toast.LENGTH_SHORT).show();
-
+            view.getContext().startActivity(new Intent(view.getContext(), Cardapio.class));
         }
 
 

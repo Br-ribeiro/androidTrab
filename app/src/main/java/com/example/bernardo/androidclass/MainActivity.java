@@ -106,12 +106,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             Toast.makeText(this, "Configuração", Toast.LENGTH_SHORT).show();
             startActivity(new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS));
             break;
-
-            /*case R.id.Telef:
-                Toast.makeText(this, "Telefone", Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(Intent.ACTION_DIAL));
-                break;*/
-
             case R.id.Logout:
                 SharedPreferences prefs = getSharedPreferences("com.example.bernardo.androidclass", Context.MODE_PRIVATE);
                 prefs.edit().putBoolean("status", false).apply();
@@ -153,7 +147,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     @Override
     public void onConnected(@Nullable Bundle bundle) {
-       /* try {
+        try {
 
             mLastLocation = LocationServices.FusedLocationApi.getLastLocation(mGoogleApiClient);
                 longitude = mLastLocation.getLongitude();
@@ -162,7 +156,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             onMapReady(mMap);
         } catch (SecurityException e) {
 
-        }*/
+        }
     }
 
     protected void onStart() {

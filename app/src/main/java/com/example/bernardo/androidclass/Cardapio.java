@@ -1,5 +1,7 @@
 package com.example.bernardo.androidclass;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -7,8 +9,8 @@ import android.widget.Toast;
 
 public class Cardapio extends AppCompatActivity {
     String caso;
-
     View view;
+    SharedPreferences prefs;
 
 
     @Override
@@ -16,24 +18,35 @@ public class Cardapio extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cardapio);
 
+        prefs = getSharedPreferences("com.example.bernardo.androidclass", Context.MODE_PRIVATE);
 
 
-        String yourDataObject = null;
+        Toast.makeText(this,"entrou no cardapio", Toast.LENGTH_SHORT ).show();
+        Toast.makeText(this,"Vai falar o tipo", Toast.LENGTH_SHORT ).show();
+        //Toast.makeText(this,String.valueOf(aaa), Toast.LENGTH_SHORT ).show();
 
-        if(getIntent().hasExtra(KEYGUARD_SERVICE)){
-            yourDataObject = getIntent().getStringExtra(KEYGUARD_SERVICE);
-            //caso = yourDataObject;
-            Toast.makeText(this, "funcionou", Toast.LENGTH_SHORT).show();
-            //Selecionar(caso);
-
-        }else{
-            Toast.makeText(this, "È nulo", Toast.LENGTH_SHORT).show();
+        if(prefs.getString("menu","japa").equalsIgnoreCase("japa")){
+            View view = findViewById(R.id.teste);
+            view.setBackgroundColor(000000);
         }
+
+        if(prefs.getString("menu","massas").equalsIgnoreCase("massas")){
+            View view = findViewById(R.id.teste);
+            view.setBackgroundColor(999999);
+        }
+
+
+        if(prefs.getString("menu","massas").equalsIgnoreCase("null")){
+            View view = findViewById(R.id.teste);
+            view.setBackgroundColor(222222);
+        }
+
+
     }
 
 
 
-    public String Selecionar(String item){
+    /*public String Selecionar(String item){
         view = findViewById(R.id.escolhaTela);
         switch (item){
 
@@ -64,5 +77,5 @@ public class Cardapio extends AppCompatActivity {
 
         }
         return item;
-    }
+    }*/
 }
