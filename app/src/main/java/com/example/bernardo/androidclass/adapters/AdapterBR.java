@@ -52,7 +52,7 @@ public class AdapterBR extends RecyclerView.Adapter<AdapterBR.ViewHolder>{
     public static class ViewHolder extends RecyclerView.ViewHolder implements  View.OnClickListener{
         private ImageView ivImage;
         private TextView titulo;
-        public Intent intent;
+
 
 
 

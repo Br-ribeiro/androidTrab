@@ -17,7 +17,9 @@ import com.example.bernardo.androidclass.adapters.AdapterFastFood;
 import com.example.bernardo.androidclass.adapters.AdapterJaponesa;
 import com.example.bernardo.androidclass.adapters.AdapterMassas;
 
-public class EstiloEscolhido extends AppCompatActivity {
+import java.io.Serializable;
+
+public class EstiloEscolhido extends AppCompatActivity implements Serializable {
 
 
     String caso;
@@ -48,7 +50,6 @@ public class EstiloEscolhido extends AppCompatActivity {
         }else{
             Toast.makeText(this, "È nulo", Toast.LENGTH_SHORT).show();
         }
-        prefs.edit().putString("Menu","nulo").apply();
     }
 
 
@@ -67,24 +68,28 @@ public class EstiloEscolhido extends AppCompatActivity {
 
             case "Japonesa":
                 //view.setBackgroundColor(getResources().getColor(android.R.color.black))
+                prefs.edit().putString("Menu","japa").apply();
                 initRecyclerViewGenerico(Japonesa);
                 Toast.makeText(this, caso, Toast.LENGTH_SHORT).show();
-                prefs.edit().putString("Menu","japa");
+
                 break;
             case "Massas":
+                prefs.edit().putString("Menu","massas").apply();
                 initRecyclerViewGenerico(Massas);
                 Toast.makeText(this, caso, Toast.LENGTH_SHORT).show();
-                prefs.edit().putString("Menu","massas");
+
                 break;
             case "Fast-food":
+                prefs.edit().putString("Menu","fast_food").apply();
                 initRecyclerViewGenerico(Fast_food);
                 Toast.makeText(this, caso, Toast.LENGTH_SHORT).show();
-                prefs.edit().putString("Menu","fast_food");
+
                 break;
             case "Brasileira":
+                prefs.edit().putString("Menu","brasieiro").apply();
                 initRecyclerViewGenerico(Brasileira);
                 Toast.makeText(this, caso, Toast.LENGTH_SHORT).show();
-                prefs.edit().putString("Menu","brasieiro");
+
                 break;
         }
         return item;
