@@ -87,7 +87,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     protected void initToolbar(){
         Toolbar toolbar = (Toolbar)findViewById(R.id.toolbar_principal);
         toolbar.setTitle(" ");
-        toolbar.setLogo(R.mipmap.logo);
+        toolbar.setLogo(R.mipmap.ic_launcher);
         setSupportActionBar(toolbar);
     }
 
@@ -147,7 +147,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     @Override
     public void onConnected(@Nullable Bundle bundle) {
-        /*try {
+        try {
 
             mLastLocation = LocationServices.FusedLocationApi.getLastLocation(mGoogleApiClient);
                 longitude = mLastLocation.getLongitude();
@@ -156,7 +156,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             onMapReady(mMap);
         } catch (SecurityException e) {
 
-        }*/
+        }
     }
 
     protected void onStart() {
