@@ -48,7 +48,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         setContentView(R.layout.activity_main);
 
         initToolbar();
-        //initSpinner();
 
         initSpinnerCustom();
 
@@ -103,13 +102,12 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         switch (item.getItemId()){
 
             case R.id.Config:
-            Toast.makeText(this, "Configuração", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "GPS", Toast.LENGTH_SHORT).show();
             startActivity(new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS));
             break;
             case R.id.Logout:
                 SharedPreferences prefs = getSharedPreferences("com.example.bernardo.androidclass", Context.MODE_PRIVATE);
                 prefs.edit().putBoolean("status", false).apply();
-
                 startActivity(new Intent(MainActivity.this, Login.class));
                 finish();
                 break;
@@ -122,9 +120,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         String[] categoria = getResources().getStringArray(R.array.aCategorias);
 
         if(categoria[position].equals("Escolha!!")){
-            Toast.makeText(this, categoria[position], Toast.LENGTH_SHORT).show();
+
         }else{
-            Toast.makeText(this, categoria[position], Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(this, EstiloEscolhido.class);
             intent.putExtra(EstiloEscolhido.KEYGUARD_SERVICE, categoria[position]);
             startActivity(intent);

@@ -24,7 +24,7 @@ public class AdapterFastFood extends RecyclerView.Adapter<AdapterFastFood.ViewHo
 
     @Override
     public AdapterFastFood.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.fastfood_rv, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.generico_rv, parent, false);
         return new AdapterFastFood.ViewHolder(view);
     }
     public AdapterFastFood(){
@@ -56,7 +56,6 @@ public class AdapterFastFood extends RecyclerView.Adapter<AdapterFastFood.ViewHo
 
         @Override
         public void onClick(View view) {
-            Toast.makeText(view.getContext(), "Você clicou no " + getAdapterPosition(), Toast.LENGTH_SHORT).show();
             view.getContext().startActivity(new Intent(view.getContext(), Cardapio.class));
         }
     }

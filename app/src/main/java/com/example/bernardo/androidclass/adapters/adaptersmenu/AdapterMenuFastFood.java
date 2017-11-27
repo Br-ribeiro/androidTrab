@@ -22,7 +22,7 @@ public class AdapterMenuFastFood extends RecyclerView.Adapter<AdapterMenuFastFoo
 
     @Override
     public AdapterMenuFastFood.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.rv_menu_fastfood, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.rv_menu_generico, parent, false);
         return new AdapterMenuFastFood.ViewHolder(view);
 
 
@@ -60,8 +60,6 @@ public class AdapterMenuFastFood extends RecyclerView.Adapter<AdapterMenuFastFoo
 
         @Override
         public void onClick(View view) {
-            Toast.makeText(view.getContext(), "Você clicou no " + getAdapterPosition(), Toast.LENGTH_SHORT).show();
-            //view.getContext().startActivity(new Intent(view.getContext(), Cardapio.class));
         }
 
 

@@ -44,11 +44,7 @@ public class EstiloEscolhido extends AppCompatActivity implements Serializable {
         if(getIntent().hasExtra(KEYGUARD_SERVICE)){
             yourDataObject = getIntent().getStringExtra(KEYGUARD_SERVICE);
             caso = yourDataObject;
-            Toast.makeText(this, "funcionou", Toast.LENGTH_SHORT).show();
             Selecionar(caso);
-
-        }else{
-            Toast.makeText(this, "È nulo", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -63,33 +59,23 @@ public class EstiloEscolhido extends AppCompatActivity implements Serializable {
     }
 
     public String Selecionar(String item){
-       // view = findViewById(R.id.escolhaTela);
         switch (item){
 
             case "Japonesa":
-                //view.setBackgroundColor(getResources().getColor(android.R.color.black))
                 prefs.edit().putString("Menu","japa").apply();
                 initRecyclerViewGenerico(Japonesa);
-                Toast.makeText(this, caso, Toast.LENGTH_SHORT).show();
-
                 break;
             case "Massas":
                 prefs.edit().putString("Menu","massas").apply();
                 initRecyclerViewGenerico(Massas);
-                Toast.makeText(this, caso, Toast.LENGTH_SHORT).show();
-
                 break;
             case "Fast-food":
                 prefs.edit().putString("Menu","fast_food").apply();
                 initRecyclerViewGenerico(Fast_food);
-                Toast.makeText(this, caso, Toast.LENGTH_SHORT).show();
-
                 break;
             case "Brasileira":
                 prefs.edit().putString("Menu","brasieiro").apply();
                 initRecyclerViewGenerico(Brasileira);
-                Toast.makeText(this, caso, Toast.LENGTH_SHORT).show();
-
                 break;
         }
         return item;

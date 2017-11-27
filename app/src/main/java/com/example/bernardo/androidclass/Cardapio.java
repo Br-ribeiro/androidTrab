@@ -46,7 +46,6 @@ public class Cardapio extends AppCompatActivity {
 
             case "japa":
                 initRecyclerViewGenerico(JapaMenu);
-
                 break;
             case "massas":
                 initRecyclerViewGenerico(Massasmenu);

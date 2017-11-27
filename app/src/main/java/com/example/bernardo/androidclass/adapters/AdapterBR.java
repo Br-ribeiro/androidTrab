@@ -1,7 +1,6 @@
 package com.example.bernardo.androidclass.adapters;
 
 import android.content.Intent;
-import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,7 +10,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.bernardo.androidclass.Cardapio;
-import com.example.bernardo.androidclass.EstiloEscolhido;
 import com.example.bernardo.androidclass.R;
 
 
@@ -28,7 +26,7 @@ public class AdapterBR extends RecyclerView.Adapter<AdapterBR.ViewHolder>{
 
     @Override
     public AdapterBR.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.brasil_rv, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.generico_rv, parent, false);
         return new AdapterBR.ViewHolder(view);
 
 
@@ -66,7 +64,6 @@ public class AdapterBR extends RecyclerView.Adapter<AdapterBR.ViewHolder>{
 
         @Override
         public void onClick(View view) {
-            Toast.makeText(view.getContext(), "Você clicou no " + getAdapterPosition(), Toast.LENGTH_SHORT).show();
             view.getContext().startActivity(new Intent(view.getContext(), Cardapio.class));
         }
 

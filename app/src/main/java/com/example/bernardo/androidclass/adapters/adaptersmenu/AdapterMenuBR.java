@@ -21,7 +21,7 @@ public class AdapterMenuBR extends RecyclerView.Adapter<AdapterMenuBR.ViewHolder
 
     @Override
     public AdapterMenuBR.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.rv_menu_japa, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.rv_menu_generico, parent, false);
         return new AdapterMenuBR.ViewHolder(view);
 
 
@@ -56,12 +56,9 @@ public class AdapterMenuBR extends RecyclerView.Adapter<AdapterMenuBR.ViewHolder
             ivImage.setOnClickListener(this);
         }
 
+
         @Override
-        public void onClick(View view) {
-            Toast.makeText(view.getContext(), "Você clicou no " + getAdapterPosition(), Toast.LENGTH_SHORT).show();
-            //view.getContext().startActivity(new Intent(view.getContext(), Cardapio.class));
+        public void onClick(View v) {
         }
-
-
     }
 }

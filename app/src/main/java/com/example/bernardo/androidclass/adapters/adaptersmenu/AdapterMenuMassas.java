@@ -21,7 +21,7 @@ public class AdapterMenuMassas extends RecyclerView.Adapter<AdapterMenuMassas.Vi
 
     @Override
     public AdapterMenuMassas.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.rv_menu_massas, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.rv_menu_generico, parent, false);
         return new AdapterMenuMassas.ViewHolder(view);
 
 
@@ -58,8 +58,6 @@ public class AdapterMenuMassas extends RecyclerView.Adapter<AdapterMenuMassas.Vi
 
         @Override
         public void onClick(View view) {
-            Toast.makeText(view.getContext(), "Você clicou no " + getAdapterPosition(), Toast.LENGTH_SHORT).show();
-            //view.getContext().startActivity(new Intent(view.getContext(), Cardapio.class));
         }
 
 

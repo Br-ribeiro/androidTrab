@@ -46,7 +46,6 @@ public class Login extends AppCompatActivity {
                 if(usuario.equalsIgnoreCase(prefs.getString("user", null)) && senha.equals(prefs.getString("passwd", null))){
                     prefs.edit().putBoolean("status", true).apply();
                     startActivity(new Intent(Login.this, MainActivity.class));
-                    Toast.makeText(Login.this,"foi", Toast.LENGTH_SHORT).show();
                     finish();
                 }else{
                     Toast.makeText(Login.this, "Usuário ou senha errado", Toast.LENGTH_SHORT).show();
